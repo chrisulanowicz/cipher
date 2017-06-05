@@ -177,7 +177,7 @@ let cipher = findEncryption(plainText, encryptedText); // first we let the algo'
 let message = decryptText(encryptedText, cipher);
 console.log(message);
 // this next line creates a new file with the decrypted text
-// fs.writeFile("decrypted.txt", decryptText(encryptedText, cipher), "utf8");
+fs.writeFile("decrypted.txt", decryptText(encryptedText, cipher), "utf8");
 
 // this tests the encryption of plain text using a different keyword
 let encryptedMessage = encryptText(usersInput, "algorithm");
@@ -192,7 +192,7 @@ let cipher2 = {"a":"t","b":"a","c":"k","d":"s","e":"z","f":"y","g":"w","h":"l","
 let message2 = decryptText(encryptedHardText, cipher2);
 console.log(message2);
 // whereas this will create a new file with the decrypted text
-// fs.writeFile("decrypted_hard.txt", decryptText(encryptedHardText, cipher2), "utf8");
+fs.writeFile("decrypted_hard.txt", decryptText(encryptedHardText, cipher2), "utf8");
 
 
 // some issues I ran into while coming up with these algorithms
