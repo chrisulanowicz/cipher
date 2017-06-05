@@ -1,0 +1,27 @@
+{
+  "name": "cipher",
+  "version": "1.0.0",
+  "description": "Basic introduction to cryptography with an encryption and decryption tool",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "cryptography",
+    "cipher",
+    "atbash",
+    "caeser cipher",
+    "keyword cipher",
+    "encryption",
+    "decryption"
+  ],
+  "author": "Christopher Ulanowicz",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3"
+  }
+}

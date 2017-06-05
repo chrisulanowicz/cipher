@@ -1,0 +1,11 @@
+<div id="main">
+	<h3>Take for example the below encrypted file.</h3>
+	<pre ng-include src="'/static/files/encrypted.txt'"></pre>
+	<h3>Let's assume we know that this plain text file contains the encrypted text within it. (maybe it's a previous decoded message?)</h3>
+	<pre ng-include src="'/static/files/plain.txt'"></pre>
+	<h3>We can search through this text until we find a similar word length pattern</h3>
+	<h4><span>Run a browser search (command + f on mac, control + f on pc) for 'romeo'</span> The plain text should now have jumped to the beginning of Romeo and Juliet. Compare this to the beginning of the encrypted file. Notice how the spacing, line breaks, and word lengths are practically the same? If you start to manually write down the letters you'll notice that every 't' is encrypted as 'j', 'h' is 'x', 'e' is 'n' and so on. Keep doing this far enough and you'll have almost the entire alphabet decoded. You don't have to go too far before you end up with this cipher: { a=z, b=h, c=i, d=m, e=n, f=e, g=y, h=x, i=w, j=v, k=u, l=t, m=s, n=r, o=q, p=p, r=l, s=k, t=j, u=g, v=f, w=d, x=c, y=b, z=a}</h4>
+	<h4>If you look through the letters we're missing one, but that's ok, it's easily filled in. Even better, we now know exactly what kind of cipher is being used, and really all we need is the keyword, in this case 'zhimne', and the rest can easily be filled out. Knowing this, even if the keyword was changed, we could still gather it by comparing the encrypted text to the plain text and decode the message. Of course, this is an easy solution, remove the plain text advantage and it gets a bit trickier, but still not too difficult to crack.
+	</h4>
+	<button>DECRYPT</button>
+</div>

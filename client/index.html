@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="cipherApp">
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="Interactive web application providing a basic introduction to cryptography focusing on simple substitution ciphers such as atbash and keyword. Encrypt your own text with a keyword of your choosing or decrypt text based on specific ciphers used for encryption" />
+	<meta name="keywords" content="cryptography, ciphers, encryption, decryption, atbash, keyword, caesar cipher, little orphan annie decoder pin" />
+	<title>Cipher App</title>
+	<link rel="stylesheet" href="/static/css/style.css" />
+	<script src="/scripts/angular/angular.js"></script>
+	<script src="/scripts/angular-route/angular-route.js"></script>
+	<script src="/static/js/angularMain.js"></script>
+	<script src="/static/js/angularFactories.js"></script>
+	<script src="/static/js/angularControllers.js"></script>
+</head>
+<body>
+	<div id="container">
+		<header>
+			<h1>Cryptography and Ciphers</h1>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="#!/">Home</a></li>
+				<li><a href="#!/sample-decrypt">Sample Decryption</a></li>
+				<li><a href="#!/sample-encrypt">Sample Encryption</a></li>
+				<li><a href="#!/cipher">Create a Cipher</a></li>
+				<li><a href="#!/text-decrypt">Decrypt Your Text</a></li>
+				<li><a href="#!/text-encrypt">Encrypt Your Text</a></li>
+			</ul>
+		</nav>
+		<div ng-view>
+			
+
+		</div>
+	</div>
+</body>
+</html>
