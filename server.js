@@ -1,14 +1,16 @@
 'use strict';
 
 const express = require("express");
-// const bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 const path = require("path");
 
 const app = express();
 
 app.use(express.static(path.join(__dirname + "/client")));
 app.use("/scripts", express.static(__dirname + "/node_modules"));
-// app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser({limit: '50mb'}));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 const routes = require("./server/config/routes.js")(app);
 

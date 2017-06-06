@@ -4,32 +4,32 @@ cipherApp.config(function($routeProvider){
 	$routeProvider
 		.when('/', {
 			templateUrl: 'views/partials/home.html',
-			controller: 'CipherController',
+			controller: 'cipherController',
 			controllerAs: "CC"
 		})
 		.when('/sample-decrypt', {
 			templateUrl: 'views/partials/sampleDecrypt.html',
-			controller: 'CipherController',
+			controller: 'cipherController',
 			controllerAs: "CC"
 		})
 		.when('/sample-encrypt', {
 			templateUrl: 'views/partials/sampleEncrypt.html',
-			controller: 'CipherController',
+			controller: 'cipherController',
 			controllerAs: "CC"
 		})
 		.when('/cipher', {
 			templateUrl: 'views/partials/cipher.html',
-			controller: 'CipherController',
+			controller: 'cipherController',
 			controllerAs: "CC"
 		})
 		.when('/text-decrypt', {
 			templateUrl: 'views/partials/textDecrypt.html',
-			controller: 'CipherController',
+			controller: 'cipherController',
 			controllerAs: "CC"
 		})
 		.when('/text-encrypt', {
 			templateUrl: 'views/partials/textEncrypt.html',
-			controller: 'CipherController',
+			controller: 'cipherController',
 			controllerAs: "CC"
 		})
 		.otherwise({

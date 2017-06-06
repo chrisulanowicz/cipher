@@ -49,7 +49,8 @@ nav {
 /*end header and navbar styling*/
 /**********************************************************************************/
 /*begin general html tag stylings*/
-pre {
+pre, textarea {
+	display: block;
 	border: 1px solid green;
 	margin: 10px auto;
 	width: 40%;
@@ -82,12 +83,13 @@ p {
 }
 
 button {
+	display: block;
 	border-radius: 5px;
 	padding: 21px 51px;
 	background: linear-gradient(limegreen, green);
 	font-weight: bold;
 	font-size: 1.4em;
-	margin: 2% 44%;
+	margin: 2% auto;
 }
 /*end general html tag stylings*/
 /*************************************************************************************/
