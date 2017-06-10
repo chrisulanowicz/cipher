@@ -5,5 +5,7 @@ module.exports = function(app){
 	app.post('/decrypt', function(req, res){
 		cipher.decrypt(req, res);
 	});
-
+	app.post('/encrypt', function(req, res){
+		cipher.encrypt(req, res);
+	})
 }

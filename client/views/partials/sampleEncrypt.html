@@ -1,3 +1,30 @@
 <div id="main">
-	<p>ENCRYPTING THIS FILE</p>
+	<div ng-if="CC.unencryptedText">
+		<h3>Here is a plain, unencrypted file.</h3>
+		<pre>{{ CC.unencryptedText }}</pre>
+		<h4>To see it get encrypted, just type in any word you like as a keyword and click the button</h4>
+		<h4>** Use the word "zhimne" and you'll see the file encrypted exactly the same as the encrypted file found in the "Sample Decryption" tab **</h4>
+		<label for="keyword">Keyword
+			<input type="text" id="keyword" ng-model="CC.keyword" />
+		</label>
+		<button ng-click="CC.encrypt(CC.unencryptedText)">Encrypt</button>
+	</div>
+	<div ng-if="CC.encryptedText2">
+		<pre>{{ CC.encryptedText2 }}</pre>
+		<h4>What just happened? Using the keyword you typed in (after first removing any duplicate letters i.e. 'secret' becomes 'secrt'), a computer created a cipher starting with the keyword to substitute the letters, and then using the remaining letters of the alphabet in reverse order (a hybrid keyword/atbash cipher). It then ran through each character of the original text and substituted it with the corresponding letter from the cipher. In fact, here's that cipher:</h4>
+		<table>
+			<thead>
+				<tr>
+					<th>Plain Text</th>
+					<th>Cipher Text</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="(key, value) in CC.cipher">
+					<td>{{ value }}</td>
+					<td>{{ key }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>
