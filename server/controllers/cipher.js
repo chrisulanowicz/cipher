@@ -4,7 +4,7 @@
 // keyword gets used first in the cipher and then the rest of the alphabet is used up in reverse order
 function createCipher(keyword){
 	let cipher = {};
-	let trimmedKeyword = trimWord(keyword); // this will trim duplicate letters from string
+	let trimmedKeyword = trimWord(keyword).toLowerCase(); // this will trim duplicate letters from string
 	let keywordArray = trimmedKeyword.split("").reverse();
 	let keyLetterCode = 122; // this will be used for the cipher text starting at z
 	for(let i=97;i<123;i++){ // loop through character codes from a to z
@@ -189,7 +189,7 @@ module.exports = {
 	},
 	encrypt: function(req, res){
 		let cipher = createCipher(req.body.keyword);
-		let encryptedText = encryptText(req.body.unencrypted, req.body.keyword);
+		let encryptedText = encryptText(req.body.text, req.body.keyword);
 		res.json({"encryptedText":encryptedText, "cipher":cipher});
 	},
 	makeCipher: function(req, res){

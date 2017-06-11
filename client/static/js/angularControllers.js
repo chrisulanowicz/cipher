@@ -26,9 +26,8 @@ cipherApp.controller('cipherController', ['cipherFactory', function(cipherFactor
 			console.log(error);
 		})
 	};
-	this.encrypt = function(unencrypted){
-		let input = {"unencrypted":unencrypted, "keyword":self.keyword};
-		cipherFactory.encryptText(input, function(response){
+	this.encrypt = function(){
+		cipherFactory.encryptText(self.newEncryption, function(response){
 			delete self.unencryptedText;
 			self.encryptedText2 = response.data.encryptedText;
 			self.cipher = response.data.cipher;

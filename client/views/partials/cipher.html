@@ -1,10 +1,10 @@
 <div id="main">
 	<h3>Want to make your own custom cipher? All you need is a keyword of your own choosing and we'll create a cipher for you. Use it to encrypt notes at school, or maybe create a family night game out of it. As long as the intended recipient has the cipher or the keyword (if they know how the cipher is made), they'll be able to decode. You can even test that know-it-all friend/family member of yours with it and see if they can crack the code!</h3>
 	<form ng-submit="CC.createCipher()">
-		<label for="keyword">
-			<input type="text" id="keyword" ng-model="CC.input.keyword" />
+		<label for="keyword">Keyword: 
+			<input type="text" id="keyword" pattern="[a-zA-Z]+" ng-pattern-restrict ng-model="CC.input.keyword" placeholder="Must contain letters only" required />
 		</label>
-		<input type="submit" value="Create Cipher" />
+		<button>Create Cipher</button>
 	</form>
 	<table ng-if="CC.newCipher">
 		<thead>
