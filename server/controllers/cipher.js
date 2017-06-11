@@ -172,7 +172,6 @@ function trimWord(word){
 			trimmed += word[i];
 		}
 	}
-	console.log(trimmed);
 	return trimmed;
 }
 
@@ -193,6 +192,10 @@ module.exports = {
 		let encryptedText = encryptText(req.body.unencrypted, req.body.keyword);
 		res.json({"encryptedText":encryptedText, "cipher":cipher});
 	},
+	makeCipher: function(req, res){
+		let cipher = createCipher(req.body.keyword);
+		res.json({"newCipher": cipher});
+	}
 }
 
 // other issues/edge cases that need to be addressed

@@ -51,5 +51,8 @@ cipherApp.factory('cipherFactory', function($http){
 	factory.encryptText = function(input, callback, errCallback){
 		$http.post('/encrypt', input).then(callback, errCallback);
 	};
+	factory.createCipher = function(keyword, callback,errCallback){
+		$http.post('/cipher', keyword).then(callback, errCallback);
+	}
 	return factory;
 })

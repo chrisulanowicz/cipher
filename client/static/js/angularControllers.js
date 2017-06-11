@@ -36,4 +36,11 @@ cipherApp.controller('cipherController', ['cipherFactory', function(cipherFactor
 			console.log(error);
 		})
 	};
+	this.createCipher = function(){
+		cipherFactory.createCipher(self.input, function(response){
+			self.newCipher = response.data.newCipher;
+		}, function(error){
+			console.log(error);
+		})
+	};
 }]);
