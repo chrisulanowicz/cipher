@@ -48,6 +48,9 @@ cipherApp.factory('cipherFactory', function($http){
 	factory.decryptText = function(newText, callback, errCallback){
 		$http.post('/decrypt', newText).then(callback, errCallback);
 	};
+	factory.decryptWithKeyword = function(input, callback, errCallback){
+		$http.post('/decrypt/keyword', input).then(callback, errCallback);
+	};
 	factory.encryptText = function(input, callback, errCallback){
 		$http.post('/encrypt', input).then(callback, errCallback);
 	};

@@ -187,6 +187,11 @@ module.exports = {
 		res.json({decryptedText:newText});
 
 	},
+	decryptWithKeyword: function(req, res){
+		let cipher = createCipher(req.body.keyword);
+		let decryptedText = decryptText(req.body.text, cipher);
+		res.json({"decryptedText":decryptedText, "cipher":cipher});
+	},
 	encrypt: function(req, res){
 		let cipher = createCipher(req.body.keyword);
 		let encryptedText = encryptText(req.body.text, req.body.keyword);

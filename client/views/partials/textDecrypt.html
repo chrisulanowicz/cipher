@@ -1,3 +1,33 @@
 <div id="main">
-	<p>DECRYPT THIS FILE</p>
+	<div ng-hide="CC.decryptedText2">
+		<h3>Decrypt your own text.</h3>
+		<h4>Simply type in (or copy and paste) your encrypted text along with the keyword used to decrypt it.</h4>
+		<form ng-submit="CC.decryptWithKeyword()">
+			<label for="text">Encrypted Text:
+				<textarea id="text" ng-model="CC.newDecryption.text" required></textarea>
+			</label>
+			<label for="keyword">Keyword: 
+				<input type="text" id="keyword" pattern="[a-zA-Z]+" ng-pattern-restrict ng-model="CC.newDecryption.keyword" placeholder="Must contain letters only" required />
+			</label>
+			<button>DECRYPT</button>
+		</form>
+	</div>
+	<div ng-if="CC.decryptedText2">
+		<pre>{{ CC.decryptedText2 }}</pre>
+		<h4>Here is the cipher used: </h4>
+		<table>
+			<thead>
+				<tr>
+					<th>Plain Text</th>
+					<th>Cipher Text</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="(key, value) in CC.cipher">
+					<td>{{ value }}</td>
+					<td>{{ key }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>

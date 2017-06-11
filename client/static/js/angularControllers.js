@@ -26,6 +26,16 @@ cipherApp.controller('cipherController', ['cipherFactory', function(cipherFactor
 			console.log(error);
 		})
 	};
+	this.decryptWithKeyword = function(){
+		console.log("controller line 30", self.newDecryption);
+		cipherFactory.decryptWithKeyword(self.newDecryption, function(response){
+			console.log("response is", response);
+			self.decryptedText2 = response.data.decryptedText;
+			self.cipher = response.data.cipher;
+		}, function(error){
+			console.log(error);
+		})
+	};
 	this.encrypt = function(){
 		cipherFactory.encryptText(self.newEncryption, function(response){
 			delete self.unencryptedText;
